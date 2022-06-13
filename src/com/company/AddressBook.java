@@ -3,16 +3,31 @@ package com.company;
 import java.util.Scanner;
 
 public class AddressBook {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("Welcome the Address Book");
-        Contact contact = addContact();
-        System.out.println(contact);
-        Contact editContact = editContact(contact);
-        System.out.println(editContact);
-        Contact deleteContact = deleteContact(contact);
-        System.out.println(deleteContact);
+        System.out.println("Enter the Number of contact ");
+        int noOfPerson = scanner.nextInt();
+        for (int i = 0; i < noOfPerson; i++) {
+            System.out.println("Person " + (i + 1) + "Details");
+            Contact contact = addContact();
+            System.out.println(contact);
+            System.out.println("Select the Option \n 1.Edit \n 2.Delete \n 3.Save ");
+            int option = scanner.nextInt();
+            switch (option) {
+                case 1:
+                    Contact editContact = editContact(contact);
+                    System.out.println(editContact);
+                    break;
+                case 2:
+                    Contact deleteContact = deleteContact(contact);
+                    System.out.println(deleteContact);
+                    break;
+                case 3:
+                    System.out.println("Contact is successfully save");
+            }
+        }
     }
 
     private static Contact addContact() {
@@ -84,6 +99,7 @@ public class AddressBook {
         }
         return contact;
     }
+
     private static Contact deleteContact(Contact contact) {
         System.out.println("delete the contact \n Select the Option \n1. First Name \n2. Last Name \n3. Address \n4. City \n5. State \n6. Zip \n7. Phone NUmber \n8. Email ID");
         int option = scanner.nextInt();
