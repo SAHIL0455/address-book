@@ -6,26 +6,32 @@ public class AddressBook {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Welcome the Address Book");
-        System.out.println("Enter the Number of contact ");
-        int noOfPerson = scanner.nextInt();
-        for (int i = 0; i < noOfPerson; i++) {
-            System.out.println("Person " + (i + 1) + "Details");
-            Contact contact = addContact();
-            System.out.println(contact);
-            System.out.println("Select the Option \n 1.Edit \n 2.Delete \n 3.Save ");
-            int option = scanner.nextInt();
-            switch (option) {
-                case 1:
-                    Contact editContact = editContact(contact);
-                    System.out.println(editContact);
-                    break;
-                case 2:
-                    Contact deleteContact = deleteContact(contact);
-                    System.out.println(deleteContact);
-                    break;
-                case 3:
-                    System.out.println("Contact is successfully save");
+        System.out.println("How many Address Book is creating");
+        int addressBookNumber = scanner.nextInt();
+        for (int j = 0; j < addressBookNumber; j++) {
+            System.out.println("Enter the Name of " + j + 1 + " Address Book");
+            String name = scanner.next();
+            System.out.println("Welcome " + name + " Address Book");
+            System.out.println("Enter the Number of contact ");
+            int noOfPerson = scanner.nextInt();
+            for (int i = 0; i < noOfPerson; i++) {
+                System.out.println("Person " + (i + 1) + "Details");
+                Contact contact = addContact();
+                System.out.println(contact);
+                System.out.println("Select the Option \n 1.Edit \n 2.Delete \n 3.Save ");
+                int option = scanner.nextInt();
+                switch (option) {
+                    case 1:
+                        Contact editContact = editContact(contact);
+                        System.out.println(editContact);
+                        break;
+                    case 2:
+                        Contact deleteContact = deleteContact(contact);
+                        System.out.println(deleteContact);
+                        break;
+                    case 3:
+                        System.out.println("Contact is successfully save");
+                }
             }
         }
     }
