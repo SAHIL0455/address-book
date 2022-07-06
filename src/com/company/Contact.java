@@ -10,6 +10,17 @@ public class Contact {
     private long phoneNumber;
     private String email;
 
+    Contact() {
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setAddress(address);
+        this.setCity(city);
+        this.setState(state);
+        this.setZip(zip);
+        this.setPhoneNumber(phoneNumber);
+        this.setEmail(email);
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -72,6 +83,19 @@ public class Contact {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Contact(String firstName2, String lastName2, String address2, String city2, String state2, String email2,
+                   int zip2, long phoneNumber2) {
+        this.firstName = firstName2;
+        this.lastName = lastName2;
+        this.address = address2;
+        this.city = city2;
+        this.state = state2;
+        this.zip = zip2;
+        this.phoneNumber = phoneNumber2;
+        this.email = email2;
+        // TODO Auto-generated constructor stub
     }
 
     @Override
