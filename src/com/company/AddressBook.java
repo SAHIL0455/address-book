@@ -27,9 +27,15 @@ public class AddressBook {
     }
 
     public static void addContact() {
+        System.out.println("Enter the first name");
+        String firstName = scanner.next();
+        boolean Isduplicate = addressBookList.stream().anyMatch(person -> (person.getFirstName()).equals(firstName));
+        if (Isduplicate){
+            System.out.println("all ready save the contact ");
+            return;
+        }
         Contact contact = new Contact();
-        System.out.println("Enter the First Name");
-        contact.setFirstName(scanner.next());
+        contact.setFirstName(firstName);
         System.out.println("Enter the Last Name");
         contact.setLastName(scanner.next());
         System.out.println("Enter the Address");
@@ -44,7 +50,6 @@ public class AddressBook {
         contact.setPhoneNumber(scanner.nextLong());
         System.out.println("Enter the Email ID");
         contact.setEmail(scanner.next());
-
         addressBookList.add(contact);
         System.out.println(addressBookList);
         System.out.println("Successfully added new Contacts");

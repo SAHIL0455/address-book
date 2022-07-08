@@ -12,7 +12,7 @@ public class MultiplyAddressBook {
         System.out.println("Welcome to Multiply Address Book");
         boolean condition = true;
         while (condition) {
-            System.out.println("choose options \n1 : Add New AddressBook System \n2 : Add AddressBook System Contacts\n3 : Edit AddressBook System Contacts\n4 : Delete AddressBook System Contact\n5 : Add AddressBook System multiple contacts\n6 : Exit");
+            System.out.println("choose options \n1 : Add New AddressBook System \n2 : Add AddressBook System Contacts\n3 : Edit AddressBook System Contacts\n4 : Delete AddressBook System Contact\n5 : Add AddressBook System multiple contacts\n6 :  Exit");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:

@@ -10,15 +10,8 @@ public class Contact {
     private long phoneNumber;
     private String email;
 
-    Contact() {
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setAddress(address);
-        this.setCity(city);
-        this.setState(state);
-        this.setZip(zip);
-        this.setPhoneNumber(phoneNumber);
-        this.setEmail(email);
+    public Contact() {
+
     }
 
     public String getFirstName() {
