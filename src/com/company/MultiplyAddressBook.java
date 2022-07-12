@@ -12,7 +12,10 @@ public class MultiplyAddressBook {
         System.out.println("Welcome to Multiply Address Book");
         boolean condition = true;
         while (condition) {
-            System.out.println("choose options \n1 : Add New AddressBook System \n2 : Add AddressBook System Contacts\n3 : Edit AddressBook System Contacts\n4 : Delete AddressBook System Contact\n5 : Add AddressBook System multiple contacts\n6 :  Exit");
+            System.out.println("choose options \n1 : Add New AddressBook System \n2 : Add AddressBook System Contacts" +
+                    "\n3 : Edit AddressBook System Contacts\n4 : Delete AddressBook System Contact" +
+                    "\n5 : Add AddressBook System multiple contacts\n6  searchPersonInMultiplyAddressBook" +
+                    "\n7 countCityOfPerson\n8 exit");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -30,15 +33,30 @@ public class MultiplyAddressBook {
                 case 5:
                     addMultipleContactsToAddressBook();
                     break;
-                case 7:
+                case 8:
                     condition = false;
                     System.out.println("Exiting the loop ");
                 case 6:
                     searchPersonInMultiplyAddressBook();
+                    break;
+                case 7:
+                    countCityOfPerson();
                 default:
                     System.out.println(mapAddressBook);
                     System.out.println("Invalid Number. Please try again");
             }
+        }
+    }
+
+    private static void countCityOfPerson() {
+        System.out.println("Enter the name of Addresses book");
+        String cityOrstate = scanner.next();
+        AddressBook addressBook = new AddressBook();
+        AddressBook address = mapAddressBook.get(cityOrstate);
+        if (address == null){
+            System.out.println("No book is found in address bookj");
+        }else {
+            addressBook.countCityOrPerson();
         }
     }
 

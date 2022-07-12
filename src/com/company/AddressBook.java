@@ -2,6 +2,8 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 public class AddressBook {
     private static final Scanner scanner = new Scanner(System.in);
@@ -121,5 +123,19 @@ public class AddressBook {
                 System.out.println("Not found in the address book");
             }
         }
+    }
+
+    public void countCityOrPerson() {
+        System.out.println("Enter the name of City or State");
+        String cityOrState = scanner.next();
+        AtomicInteger count = new AtomicInteger(0);
+        Stream<Contact> stream = addressBookList.stream();
+        stream.forEach(i->
+                {
+                    if (i.getCity().equals(cityOrState)&& i.getState().equals(cityOrState)){
+                        count.getAndIncrement();
+                    }
+                }
+                );
     }
 }
