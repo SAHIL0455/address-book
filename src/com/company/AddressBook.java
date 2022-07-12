@@ -110,4 +110,16 @@ public class AddressBook {
             System.out.println(addressBookList);
         }
     }
+
+    public void searchContact() {
+        System.out.println("Enter the name of city or state");
+        String cityOrState = scanner.next();
+        for (Contact contact : addressBookList) {
+            if (contact.getCity().equals(cityOrState) && contact.getState().equals(cityOrState)) {
+                System.out.println(contact);
+            } else {
+                System.out.println("Not found in the address book");
+            }
+        }
+    }
 }

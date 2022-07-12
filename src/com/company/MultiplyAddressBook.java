@@ -30,13 +30,27 @@ public class MultiplyAddressBook {
                 case 5:
                     addMultipleContactsToAddressBook();
                     break;
-                case 6:
+                case 7:
                     condition = false;
                     System.out.println("Exiting the loop ");
+                case 6:
+                    searchPersonInMultiplyAddressBook();
                 default:
                     System.out.println(mapAddressBook);
                     System.out.println("Invalid Number. Please try again");
             }
+        }
+    }
+
+    private static void searchPersonInMultiplyAddressBook() {
+        System.out.println("Enter the Name of address Book");
+        String bookName =scanner.next();
+        AddressBook address = mapAddressBook.get(bookName);
+        AddressBook addressBook = new AddressBook();
+        if (address == null){
+            System.out.println("No book found in address");
+        }else {
+            addressBook.searchContact();
         }
     }
 
