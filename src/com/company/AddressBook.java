@@ -10,8 +10,8 @@ public class AddressBook {
     public static void deleteContact() {
         System.out.println("Enter the name ");
         String name = scanner.next();
-        for (int i=0; i<addressBookList.size();i++){
-            if (addressBookList.get(i).getFirstName().equals(name)){
+        for (int i = 0; i < addressBookList.size(); i++) {
+            if (addressBookList.get(i).getFirstName().equals(name)) {
                 addressBookList.remove(addressBookList.get(i));
             }
         }
@@ -30,7 +30,7 @@ public class AddressBook {
         System.out.println("Enter the first name");
         String firstName = scanner.next();
         boolean Isduplicate = addressBookList.stream().anyMatch(person -> (person.getFirstName()).equals(firstName));
-        if (Isduplicate){
+        if (Isduplicate) {
             System.out.println("all ready save the contact ");
             return;
         }
@@ -58,8 +58,8 @@ public class AddressBook {
     public static void editContact() {
         System.out.println("Enter the name to edit: ");
         String name = scanner.next();
-        for (int i =0; i<addressBookList.size();i++){
-            if (addressBookList.get(i).getFirstName().equals(name)){
+        for (int i = 0; i < addressBookList.size(); i++) {
+            if (addressBookList.get(i).getFirstName().equals(name)) {
                 System.out.println("Edit the contact \n Select the Option \n1. First Name \n2. Last Name \n3. Address \n4. City \n5. State \n6. Zip \n7. Phone NUmber \n8. Email ID");
                 int option = scanner.nextInt();
                 switch (option) {
@@ -86,7 +86,7 @@ public class AddressBook {
                     case 5:
                         System.out.println("Enter the State");
                         addressBookList.get(i).setState(scanner.next());
-                        System.out.println("Now Your State is : " +addressBookList.get(i).getState());
+                        System.out.println("Now Your State is : " + addressBookList.get(i).getState());
                         break;
                     case 6:
                         System.out.println("Enter the Zip ");

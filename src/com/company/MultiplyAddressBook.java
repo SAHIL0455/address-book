@@ -44,24 +44,25 @@ public class MultiplyAddressBook {
 
     private static void searchPersonInMultiplyAddressBook() {
         System.out.println("Enter the Name of address Book");
-        String bookName =scanner.next();
+        String bookName = scanner.next();
         AddressBook address = mapAddressBook.get(bookName);
         AddressBook addressBook = new AddressBook();
-        if (address == null){
+        if (address == null) {
             System.out.println("No book found in address");
-        }else {
+        } else {
             addressBook.searchContact();
         }
     }
 
     private static void addMultipleContactsToAddressBook() {
         System.out.println("Enter the Name of address Book");
-        String bookName =scanner.next();
+        String bookName = scanner.next();
         AddressBook address = mapAddressBook.get(bookName);
         AddressBook addressBook = new AddressBook();
-        if (address == null){
+        if (address == null) {
             System.out.println("No book found in address");
-        }else { System.out.println("Enter the Number of contact");
+        } else {
+            System.out.println("Enter the Number of contact");
             int number = scanner.nextInt();
             addressBook.multipleContact(number);
 
@@ -70,52 +71,51 @@ public class MultiplyAddressBook {
 
     private static void deleteAddressBookContact() {
         System.out.println("Enter the Name of address Book");
-        String bookName =scanner.next();
+        String bookName = scanner.next();
         AddressBook address = mapAddressBook.get(bookName);
         AddressBook addressBook = new AddressBook();
-        if (address == null){
+        if (address == null) {
             System.out.println("No book found in address");
-        }else {
+        } else {
             addressBook.deleteContact();
         }
     }
 
     private static void editAddressBookContact() {
         System.out.println("Enter the Name of address Book");
-        String bookName =scanner.next();
+        String bookName = scanner.next();
         AddressBook address = mapAddressBook.get(bookName);
         AddressBook addressBook = new AddressBook();
-        if (address == null){
+        if (address == null) {
             System.out.println("No book found in address");
-        }else {
+        } else {
             addressBook.editContact();
         }
     }
 
     private static void addAddressBookContact() {
         System.out.println("Enter the Name of address Book");
-        String bookName =scanner.next();
+        String bookName = scanner.next();
         AddressBook address = mapAddressBook.get(bookName);
         AddressBook addressBook = new AddressBook();
-        if (address == null){
+        if (address == null) {
             System.out.println("No book found in address");
-        }else {
+        } else {
             addressBook.addContact();
         }
     }
 
     private static void addAddressBook() {
         System.out.println("Enter the Name of address Book");
-        String bookName =scanner.next();
+        String bookName = scanner.next();
         AddressBook address = mapAddressBook.get(bookName);
-        if(address == null){
+        if (address == null) {
             AddressBook addressBook = new AddressBook();
-            mapAddressBook.put(bookName,addressBook);
+            mapAddressBook.put(bookName, addressBook);
             System.out.println(mapAddressBook.entrySet());
             System.out.println("SuccessFully added New AddressBook");
-        }else{
+        } else {
             System.out.println("AddressBook with this name already exists");
         }
     }
-
 }
