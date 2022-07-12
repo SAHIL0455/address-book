@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
@@ -137,5 +138,11 @@ public class AddressBook {
                     }
                 }
                 );
+    }
+
+    public void sort() {
+        System.out.println("Sorting the address Book in the alphabetically");
+        Stream<Contact> stream = addressBookList.stream();
+        stream.sorted(Comparator.comparing(Contact :: getFirstName)).forEach(System.out::println);
     }
 }
