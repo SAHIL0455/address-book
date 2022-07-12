@@ -15,7 +15,7 @@ public class MultiplyAddressBook {
             System.out.println("choose options \n1 : Add New AddressBook System \n2 : Add AddressBook System Contacts" +
                     "\n3 : Edit AddressBook System Contacts\n4 : Delete AddressBook System Contact" +
                     "\n5 : Add AddressBook System multiple contacts\n6  searchPersonInMultiplyAddressBook" +
-                    "\n7 countCityOfPerson\n8 sortting the address book\n9 exit");
+                    "\n7 countCityOfPerson\n8 sorting the address book by first name\n9 sorting the address book by city or state\n10 exit");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -33,9 +33,6 @@ public class MultiplyAddressBook {
                 case 5:
                     addMultipleContactsToAddressBook();
                     break;
-                case 9:
-                    condition = false;
-                    System.out.println("Exiting the loop ");
                 case 6:
                     searchPersonInMultiplyAddressBook();
                     break;
@@ -45,10 +42,27 @@ public class MultiplyAddressBook {
                 case 8:
                     sortting();
                     break;
+                case 9:
+                    sortingByCity();
+                case 10:
+                    condition = false;
+                    System.out.println("Exiting the loop ");
                 default:
                     System.out.println(mapAddressBook);
                     System.out.println("Invalid Number. Please try again");
             }
+        }
+    }
+
+    private static void sortingByCity() {
+        System.out.println("Enter the name of Addresses book");
+        String addressBookName = scanner.next();
+        AddressBook addressBook = new AddressBook();
+        AddressBook address = mapAddressBook.get(addressBookName);
+        if (address == null){
+            System.out.println("Address book is not found");
+        }else {
+            addressBook.sortingByCity();
         }
     }
 

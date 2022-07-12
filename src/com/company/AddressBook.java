@@ -131,18 +131,44 @@ public class AddressBook {
         String cityOrState = scanner.next();
         AtomicInteger count = new AtomicInteger(0);
         Stream<Contact> stream = addressBookList.stream();
-        stream.forEach(i->
+        stream.forEach(i ->
                 {
-                    if (i.getCity().equals(cityOrState)&& i.getState().equals(cityOrState)){
+                    if (i.getCity().equals(cityOrState) && i.getState().equals(cityOrState)) {
                         count.getAndIncrement();
                     }
                 }
-                );
+        );
     }
 
     public void sort() {
         System.out.println("Sorting the address Book in the alphabetically");
         Stream<Contact> stream = addressBookList.stream();
-        stream.sorted(Comparator.comparing(Contact :: getFirstName)).forEach(System.out::println);
+        stream.sorted(Comparator.comparing(Contact::getFirstName)).forEach(System.out::println);
+    }
+
+    public void sortingByCity() {
+        boolean condition = true;
+        while (condition) {
+            System.out.println("choose the option\n1 sorting by city\n2 sorting by state\n3 sorting by zip\n4 exit");
+            int number = scanner.nextInt();
+            Stream<Contact> stream = addressBookList.stream();
+            switch (number) {
+                case 1:
+                    stream.sorted(Comparator.comparing(Contact::getCity)).forEach(System.out::println);
+                    break;
+                case 2:
+                    stream.sorted(Comparator.comparing(Contact::getState)).forEach(System.out::println);
+                    break;
+                case 3:
+                    stream.sorted(Comparator.comparing(Contact::getZip)).forEach(System.out::println);
+                    break;
+                case 4:
+                    System.out.println("exiting...");
+                    condition = false;
+                default:
+                    System.out.println("Enter the valid number");
+                    break;
+            }
+        }
     }
 }
